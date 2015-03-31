@@ -9,13 +9,23 @@
 OE_USER="odoo"
 
 # Getting zip repos...
+echo -e "\n---- Install RTL packages ----"
 sudo su $OE_USER -c "wget -O rami_1.zip https://github.com/mohamedhagag/dvit-odoo8/archive/master.zip"
 
+echo -e "\n---- Install EAM packages ----"
 sudo su $OE_USER -c "wget -O rami_2.zip https://github.com/codup/odoo-eam/archive/master.zip"
 
+echo -e "\n---- Install account financial reporting package ----"
 sudo su $OE_USER -c "wget -O rami_3.zip https://github.com/OCA/account-financial-reporting/archive/8.0.zip"
 
+echo -e "\n---- Install EAM packages ----"
 sudo su $OE_USER -c "wget -O rami_4.zip https://github.com/odoo/odoo/archive/8.0.zip"
+
+echo -e "\n---- Install odoo-ifrs (for IFRS financial reports) package ----"
+sudo su $OE_USER -c "wget -O rami_5.zip https://github.com/Vauxoo/odoo-ifrs/archive/8.0.zip"
+
+echo -e "\n---- Install WIP package ----"
+sudo su $OE_USER -c "wget -O rami_6.zip https://github.com/odoomrp/odoomrp-wip/archive/8.0.zip"
 
 # Unzip all
 sudo su $OE_USER -c "find . -name 'rami_*.zip' -print0 | xargs -0 -I {} -P 10 unzip {}"
