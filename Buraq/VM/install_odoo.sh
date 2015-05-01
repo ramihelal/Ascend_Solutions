@@ -27,7 +27,7 @@ backup_dir="/var/backups/postgres_db"
 wget https://raw.githubusercontent.com/ramitalat/Ascend_Solutions/master/Buraq/VM/script_ext.sh
 sudo sh script_ext.sh
 sudo mkdir $backup_dir
-sudo chown postgres $backup_dir
+sudo chown postgres:postgres $backup_dir
 
 # create the backup script ...
 sudo su - postgres -c "wget https://raw.githubusercontent.com/ramitalat/Ascend_Solutions/master/Buraq/VM/backup.sh"
